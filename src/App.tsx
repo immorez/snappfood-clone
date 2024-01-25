@@ -1,9 +1,8 @@
-import { useTranslation } from "react-i18next";
+import React from "react";
+import Router from "./routes";
 
-function App() {
-    const { t } = useTranslation();
+const App = function () {
+    return <Router />;
+};
 
-    return <>{t("SALAM")}</>;
-}
-
-export default App;
+export default React.memo(App);

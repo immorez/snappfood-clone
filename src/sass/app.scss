@@ -7,13 +7,11 @@
 
 @import "variables";
 @import "typography";
+@import "./components/loading-screen";
 
 body {
     position: relative;
-    background-color: #fff;
-    @media (prefers-color-scheme: dark) {
-        background-color: $dark-mode-background-color;
-    }
+    background-color: $background-color;
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
         env(safe-area-inset-bottom) env(safe-area-inset-left);
 
@@ -25,9 +23,6 @@ body {
 
 * {
     color: $text-color;
-    @media (prefers-color-scheme: dark) {
-        color: $dark-mode-text-color;
-    }
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }

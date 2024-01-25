@@ -1,5 +1,9 @@
-import { BounceLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 export default function LoadingScreen() {
-    return <BounceLoader color="black" />;
+    return (
+        <div className="loading-screen">
+            <BeatLoader className="bounce-loader" size={20} color="#ff00a4" />
+        </div>
+    );
 }

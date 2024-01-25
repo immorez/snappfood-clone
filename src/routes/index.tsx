@@ -18,9 +18,11 @@ export default function Router(): ReactElement | null {
         [
             {
                 path: "/",
+                element: <Home />,
                 children: [
                     {
-                        path: "/home",
+                        path: "/",
+                        index: true,
                         element: <Home />,
                     },
                     {
