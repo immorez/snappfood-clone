@@ -22,4 +22,4 @@ export const baseUrl = "https://snappfood.ir/mobile";
 export const defaultLat = 35.73315;
 export const defaultLong = 51.40643;
 
-export const defaultPageSize = 30;
+export const defaultPageSize = 10;

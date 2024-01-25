@@ -177,13 +177,18 @@ export interface IVendor {
     is_eco: boolean;
 }
 
+export interface IFinalResult {
+    type: DataEnumType;
+    data: IVendor | string;
+}
+
 export type TGetVendorsListResponse = {
     render_type: number;
     status: boolean;
     data: {
         count: number;
         open_count: number;
-        finalResult: { type: DataEnumType; data: IVendor | string }[];
+        finalResult: IFinalResult[];
     };
 };
 
