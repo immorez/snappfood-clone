@@ -1,4 +1,5 @@
 import { PATH_MAIN } from "@/routes/paths";
+import pageTitle from "@/utils/pageTitle";
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
@@ -9,7 +10,7 @@ const Home = function () {
     return (
         <>
             <Helmet>
-                <title>{t("TEXT_HOME_PAGE_TITLE")}</title>
+                <title>{pageTitle(t("TEXT_HOME_PAGE_TITLE"))}</title>
             </Helmet>
             <div className="home">
                 <div className="home--logo">
