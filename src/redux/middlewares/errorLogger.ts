@@ -11,7 +11,7 @@ const undisplayedErrorCodes: string[] = [];
 const rtkQueryErrorLogger: Middleware = () => (next) => (action) => {
     // RTK Query uses `createAsyncThunk` from redux-toolkit under the hood, so we're able to utilize these matchers!
     if (isRejectedWithValue(action)) {
-        const { response } = action.payload;
+        const { response } = action.payload as any;
 
         const { config, data } = response;
 
