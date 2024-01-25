@@ -6,6 +6,7 @@ import {
     useSelector as useAppSelector,
     TypedUseSelectorHook,
 } from "react-redux";
+import restaurantApi from "./services/restaurantApi";
 
 import { rootReducer } from "./rootReducer";
 
@@ -19,8 +20,8 @@ export const setupStore = (
         preloadedState,
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
-                serializableCheck: {},
-            }).concat([]),
+                serializableCheck: false,
+            }).concat([restaurantApi.middleware]),
     });
 };
 
