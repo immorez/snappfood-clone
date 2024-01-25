@@ -18,7 +18,11 @@ const VendorsList = function () {
 
     const [hasMoreData, setHasMoreData] = useState(true);
 
-    const { data: vendorsList, isFetching } = useGetVendorsListQuery({
+    const {
+        data: vendorsList,
+        isFetching,
+        isLoading,
+    } = useGetVendorsListQuery({
         lat: defaultLat,
         long: defaultLong,
         page_size: defaultPageSize,
@@ -95,7 +99,7 @@ const VendorsList = function () {
         }
     }, [vendorsList, page]);
 
-    if (sections && sections.length === 0) {
+    if (sections && !isLoading && sections.length === 0) {
         return (
             <div className="no-results">
                 <p>{t("TEXT_NO_RESULTS")}</p>
