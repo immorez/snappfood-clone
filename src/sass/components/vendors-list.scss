@@ -11,7 +11,6 @@
             width: inherit;
             height: $vendor-item-cover-size;
             position: relative;
-            z-index: 10;
         }
 
         &--cover-image {
@@ -24,7 +23,7 @@
             position: absolute;
             background-color: $bg-placeholder-color;
             border-radius: 0.4rem;
-            z-index: 4;
+            z-index: 1;
 
             &-img {
                 height: inherit;
@@ -47,18 +46,17 @@
             width: 3.375rem;
             height: 3.375rem;
             border-radius: 50%;
-            z-index: 8;
             background-color: $bg-placeholder-color;
-            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12);
 
             &-img {
                 height: inherit;
                 width: 3rem;
                 height: 3rem;
                 object-fit: contain;
+                z-index: 99;
                 position: absolute;
                 border-radius: 50%;
-                background-color: $bg-placeholder-color;
+                box-shadow: $card-shadow-3;
             }
         }
 
@@ -66,12 +64,21 @@
             padding-top: 1.25rem;
 
             &-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
                 &--title {
                     display: flex;
                     flex-direction: row;
+
                     h3 {
                         font-size: $text-medium;
                         font-weight: $font-medium;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        max-width: 18rem;
                     }
                 }
 
@@ -89,7 +96,25 @@
                         color: $text-white;
                         height: 0.875rem;
                         padding: 0 0.25rem;
+                        font-weight: $font-medium;
                         border-radius: 0.25rem;
+                    }
+                }
+
+                &--rating {
+                    .reviews-count {
+                        display: flex;
+                        flex-direction: row;
+                        span {
+                            font-size: $text-small;
+                            color: $seperator-color;
+                            margin-inline: 0.1rem;
+                        }
+                        p {
+                            font-size: $text-small;
+                            color: $text-color-light;
+                            font-weight: $font-light;
+                        }
                     }
                 }
             }

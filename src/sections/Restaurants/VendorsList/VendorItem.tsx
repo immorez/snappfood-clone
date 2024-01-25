@@ -9,6 +9,7 @@ const VendorItem: React.FC<VendorItemProps> = function ({
     coverPath,
     logo,
     discountValueForView,
+    countReview,
 }) {
     const { t } = useTranslation();
     return (
@@ -45,6 +46,13 @@ const VendorItem: React.FC<VendorItemProps> = function ({
                                 </p>
                             </span>
                         ) : null}
+                    </div>
+                    <div className="vendor-item--details-row--rating">
+                        <span className="reviews-count">
+                            <span>(</span>
+                            <p>{countReview.toLocaleString("fa-IR")}</p>
+                            <span>)</span>
+                        </span>
                     </div>
                 </div>
             </div>
