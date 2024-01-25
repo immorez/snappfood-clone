@@ -14,6 +14,7 @@ const rtkQueryErrorLogger: Middleware = () => (next) => (action) => {
         const { response } = action.payload;
 
         const { config, data } = response;
+
         if (
             !undisplayedErrorCodes.includes(data.code) &&
             config.method.toUpperCase() !== "GET" &&

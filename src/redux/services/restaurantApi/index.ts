@@ -17,7 +17,7 @@ const restaurant = createApi({
             TGetVendorsListParams
         >({
             query: (values) => ({
-                path: `/v3/restaurant/vendors-lis`,
+                path: `/v3/restaurant/vendors-list`,
                 method: "GET",
                 options: {
                     params: values,

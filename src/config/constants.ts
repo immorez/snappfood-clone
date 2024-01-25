@@ -18,3 +18,8 @@ export const requestTimeout = 5000; // ms
 export const defaultLocale = faIR;
 
 export const baseUrl = "https://snappfood.ir/mobile";
+
+export const defaultLat = 35.754;
+export const defaultLong = 51.328;
+
+export const defaultPageSize = 10;
