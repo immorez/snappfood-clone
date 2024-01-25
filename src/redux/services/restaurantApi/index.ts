@@ -20,7 +20,12 @@ const restaurant = createApi({
                 path: `/v3/restaurant/vendors-list`,
                 method: "GET",
                 options: {
-                    params: values,
+                    params: {
+                        ...values,
+                        optionalClient: "PWA",
+                        client: "PWA",
+                        deviceType: "PWA",
+                    },
                 },
             }),
             providesTags: [GET_VENDORS_LIST_KEY],

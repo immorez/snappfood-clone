@@ -1,0 +1,95 @@
+$root-font-size: 16px;
+
+// Box Sizing
+$box-sizing-border-box: border-box;
+$box-sizing-webkit: -webkit-box-sizing;
+
+// Animation Times
+$animation-time: 600ms;
+$animation-long-time: 1s;
+
+// Background Colors
+$bg-main-color: #fff;
+$bg-placeholder-color: "#f9f9f9";
+$bg-error-color: #fcf6f7;
+$disabled-bg-color: #f9f9f9;
+$disabled-text: #13141f;
+$primary-color: #ff00a4;
+$similar-list-background: #f8f9fb;
+
+// Text Colors
+$text-color: #404040;
+$text-white: #fff;
+$text-green: #22a958;
+$text-black: #000000;
+$text-green-rgb: 34, 169, 88;
+$input-color: #cbcbcb;
+$text-color-light: #a3a3a3;
+$text-color-light-2: #a2a2a2;
+$text-icon-color: #f2f2f2;
+$carbon-light: #53565c;
+$filter-icon-color: #8c8c8c;
+
+// Separator and Border Colors
+$seperator-color: #e6e6e6;
+$brown-icon-color: #d47a0b;
+$red-icon-color: #bd0003;
+$divider-color: #ececec;
+$border-color: #f4f5f7;
+$border-color-light: #cccc;
+$card-border-color: #f2f2f2;
+$divider-color: rgba(19, 20, 31, 0.12);
+$card-border-platin: rgba(230, 230, 230, 1);
+$cat-border-color: #e3e3e4;
+$highlight-color: #3478f6;
+$error-color: #bd272d;
+
+// Other Colors
+$light-red-bg-color: #ffeded;
+$primary-light: #ffe0f4;
+$primary-lighten: #ffecf3;
+$yellow-light: #fff4e4;
+$yellow-dark: #aa5a00;
+$body-surface: #f9fafb;
+$pro-dark: #e20074;
+$dark-background: #222330;
+
+// Font Sizes
+$text-xxx-small: 7px;
+$text-xx-small: 8px;
+$text-x-md-small: 9.1px;
+$text-x-small: 10px;
+$text-x-mid-small: 11px;
+$text-x-avr-small: 11.2px;
+$text-small: 12px;
+$text-medium: 14px;
+$text-size: 16px;
+$text-large: 17px;
+$text-m-large: 18px;
+$text-x-large: 20px;
+$text-xx-large: 22px;
+$text-xxx-large: 24px;
+$text-xxxx-large: 32px;
+$nav-size: 48px;
+$shell-margin-bottom: 56px;
+
+// Font Weights
+$font-ultraLight: 200;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 600;
+$font-bolder: 700;
+
+// Shadows
+$card-shadow: rgba(0, 0, 0, 0.1);
+$card-shadow-1: 0 2px 8px 0 $card-shadow;
+$vendors-card-shadow: rgba(64, 64, 64, 0.12);
+$card-shadow-2: 0 2px 12px 0 $card-shadow;
+$card-shadow-3: 0 2px 6px 0 $card-shadow;
+$ribbon-shadow: 0 2px 15px 0 rgba(39, 43, 51, 0.1);
+$shadow-sm: 0px 1px 6px rgba(0, 0, 0, 0.12);
+
+// Constant sizes
+
+$vendor-item-cover-size: 7.125rem;

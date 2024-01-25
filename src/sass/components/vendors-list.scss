@@ -1,0 +1,103 @@
+.vendors-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 1rem;
+
+    .vendor-item {
+        margin: 0.5rem 0;
+
+        &--cover {
+            width: inherit;
+            height: $vendor-item-cover-size;
+            position: relative;
+            z-index: 10;
+        }
+
+        &--cover-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: $bg-placeholder-color;
+            border-radius: 0.4rem;
+            z-index: 4;
+
+            &-img {
+                height: inherit;
+                width: 100%;
+                object-fit: cover;
+                position: absolute;
+                border-radius: 0.4rem;
+                filter: brightness(0.97);
+            }
+        }
+
+        &--cover-logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: -0.625rem;
+            right: 0.5rem;
+            width: 3.375rem;
+            height: 3.375rem;
+            border-radius: 50%;
+            z-index: 8;
+            background-color: $bg-placeholder-color;
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12);
+
+            &-img {
+                height: inherit;
+                width: 3rem;
+                height: 3rem;
+                object-fit: contain;
+                position: absolute;
+                border-radius: 50%;
+                background-color: $bg-placeholder-color;
+            }
+        }
+
+        &--details {
+            padding-top: 1.25rem;
+
+            &-row {
+                &--title {
+                    display: flex;
+                    flex-direction: row;
+                    h3 {
+                        font-size: $text-medium;
+                        font-weight: $font-medium;
+                    }
+                }
+
+                &--discount-badge {
+                    display: flex;
+                    align-self: self-start;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 0.25rem;
+                    margin-top: 0.25rem;
+                    p {
+                        font-size: $text-x-small;
+                        background-color: $primary-color;
+                        color: $text-white;
+                        height: 0.875rem;
+                        padding: 0 0.25rem;
+                        border-radius: 0.25rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .text-item {
+        font-size: $text-large;
+        font-weight: $font-bold;
+    }
+}

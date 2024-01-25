@@ -5,19 +5,21 @@
     text-align: right;
 }
 
-@import "variables";
-@import "typography";
+@import "./_variables";
+@import "./_typography";
 
 @import "./containers/home";
+@import "./containers/restaurants";
 @import "./containers/not-found";
 
 @import "./components/loading-screen";
+@import "./components/vendors-list";
 
 @import "./kits/button";
 
 body {
     position: relative;
-    background-color: $background-color;
+    background-color: $body-surface;
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
         env(safe-area-inset-bottom) env(safe-area-inset-left);
 
