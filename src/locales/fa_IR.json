@@ -19,5 +19,6 @@
     "TEXT_BADGE_NEW": "جدید",
     "File size is too large to upload.": "فایل برای آپلود بسیار حجیم است.",
     "Too many requests.": "تعداد درخواست بیش از حد",
-    "Check your internet connection and try again.": "اتصال اینترنت خود را بررسی کرده و مجددا تلاش کنید."
+    "Check your internet connection and try again.": "اتصال اینترنت خود را بررسی کرده و مجددا تلاش کنید.",
+    "TEXT_NO_RESULTS": "نتیجه‌ای یافت نشد."
 }

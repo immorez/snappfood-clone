@@ -9,8 +9,10 @@ import React, { useEffect, useMemo, useState } from "react";
 import TextDataItem from "./TextDataItem";
 import VendorItem from "./VendorItem";
 import VendorItemSkeleton from "./VendorItemSkeleton";
+import { useTranslation } from "react-i18next";
 
 const VendorsList = function () {
+    const { t } = useTranslation();
     const [page, setPage] = useState(0);
     const [mergedData, setMergedData] = useState<IFinalResult[]>([]);
 
@@ -92,6 +94,14 @@ const VendorsList = function () {
             }
         }
     }, [vendorsList, page]);
+
+    if (sections && sections.length === 0) {
+        return (
+            <div className="no-results">
+                <p>{t("TEXT_NO_RESULTS")}</p>
+            </div>
+        );
+    }
 
     return (
         <ul className="vendors-list">

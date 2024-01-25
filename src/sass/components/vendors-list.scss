@@ -207,3 +207,13 @@
         padding: 0rem 1rem;
     }
 }
+
+.no-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: $font-light;
+    text-align: center;
+}
