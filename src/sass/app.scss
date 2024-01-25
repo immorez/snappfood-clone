@@ -8,6 +8,8 @@
 @import "variables";
 @import "typography";
 @import "./components/loading-screen";
+@import "./containers/home";
+@import "./kits/button";
 
 body {
     position: relative;

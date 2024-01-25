@@ -1,6 +1,8 @@
 import { ReactElement, lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import Loadable from "./Loadable";
+import MainLayout from "@/components/MainLayout";
+import { useTranslation } from "react-i18next";
 
 const Home = Loadable(lazy(() => import("@/pages/home")));
 const Restaurants = Loadable(lazy(() => import("@/pages/restaurants")));
@@ -14,11 +16,12 @@ const NotFound = Loadable(lazy(() => import("@/pages/404")));
  */
 
 export default function Router(): ReactElement | null {
+    const { t } = useTranslation();
     return useRoutes(
         [
             {
                 path: "/",
-                element: <Home />,
+                element: <MainLayout />,
                 children: [
                     {
                         path: "/",
