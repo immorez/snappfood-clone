@@ -12,5 +12,12 @@
     "TEXT_ETA_UNIT": "دقیقه",
     "TEXT_VENDOR_ITEM_PRICE_UNIT": "تومان",
     "TEXT_DELIVERY_FREE": "رایگان",
-    "TEXT_UP_TO": "تا"
+    "TEXT_UP_TO": "تا",
+    "has {{coupon}} coupons": "دارای {{coupon}} کوپن",
+    "TEXT_HAS_FIRST_ORDER_COUPON": "تخفیف سفارش اول",
+    "TEXT_VENDOR_IS_ECO": "خوش‌قیمت",
+    "TEXT_BADGE_NEW": "جدید",
+    "File size is too large to upload.": "فایل برای آپلود بسیار حجیم است.",
+    "Too many requests.": "تعداد درخواست بیش از حد",
+    "Check your internet connection and try again.": "اتصال اینترنت خود را بررسی کرده و مجددا تلاش کنید."
 }

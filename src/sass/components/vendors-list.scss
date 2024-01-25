@@ -2,10 +2,9 @@
     display: flex;
     flex-direction: column;
     list-style: none;
-    padding: 1rem;
 
     .vendor-item {
-        margin: 0.5rem 0;
+        padding: 1rem;
 
         &--cover {
             width: inherit;
@@ -162,10 +161,25 @@
                 }
             }
         }
+
+        &--badges {
+            display: flex;
+            flex-direction: row;
+            margin: 0.2rem 0rem;
+            .badge {
+                background-color: $new-services-background-color;
+                padding: 0rem 0.5rem;
+                font-size: $text-small;
+                width: auto;
+                border-radius: 0.25rem;
+                margin-inline: 0.15rem;
+            }
+        }
     }
 
     .text-item {
         font-size: $text-large;
         font-weight: $font-bold;
+        padding: 0rem 1rem;
     }
 }

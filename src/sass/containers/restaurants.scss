@@ -5,4 +5,11 @@
     width: 100%;
     padding: 0;
     margin: 1rem 0rem;
+
+    .back-button {
+        align-self: self-end;
+        margin: 0rem 1rem;
+        padding: 0.25rem;
+        font-size: $text-x-large;
+    }
 }

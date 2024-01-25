@@ -69,7 +69,7 @@ const baseQuery =
                 if (errorData.errors?.length) {
                     message = errorData.errors[0].errorDescription;
                 } else if (e.response.status === 413) {
-                    message = i18n.t("File size is too large to upload");
+                    message = i18n.t("File size is too large to upload.");
                 }
 
                 if (e.response) {
@@ -81,7 +81,7 @@ const baseQuery =
                 }
             } else if (!e.request) {
                 message = i18n.t(
-                    "Check your internet connection and try again",
+                    "Check your internet connection and try again.",
                 );
                 isCancel = true;
             } else {

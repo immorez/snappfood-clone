@@ -16,6 +16,11 @@ const VendorItem: React.FC<VendorItemProps> = function ({
     isZFExpress,
     max_eta,
     deliveryFee,
+    has_coupon,
+    coupon_count,
+    has_first_coupon,
+    backgroundImage,
+    is_eco,
 }) {
     const { t } = useTranslation();
     return (
@@ -24,7 +29,11 @@ const VendorItem: React.FC<VendorItemProps> = function ({
                 <div className="vendor-item--cover-image">
                     <img
                         className="vendor-item--cover-image-img"
-                        src={coverPath.replace("300x100", "350x233")}
+                        src={
+                            coverPath
+                                ? coverPath.replace("300x100", "350x233")
+                                : backgroundImage
+                        }
                         alt={title}
                     />
                 </div>
@@ -54,14 +63,22 @@ const VendorItem: React.FC<VendorItemProps> = function ({
                         ) : null}
                     </div>
                     <div className="vendor-item--details-row--rating">
-                        <span className="reviews-count">
-                            <span>(</span>
-                            <p>{countReview.toLocaleString("fa-IR")}</p>
-                            <span>)</span>
-                        </span>
+                        {countReview ? (
+                            <span className="reviews-count">
+                                <span>(</span>
+                                <p>{countReview.toLocaleString("fa-IR")}</p>
+                                <span>)</span>
+                            </span>
+                        ) : null}
                         <div className="rate">
-                            <FaStar className="icon" />
-                            <p>{rate}</p>
+                            {rate > 0 ? (
+                                <>
+                                    <FaStar className="icon" />
+                                    <p>{rate.toFixed(1)}</p>
+                                </>
+                            ) : (
+                                <p>{t("TEXT_BADGE_NEW")}</p>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -88,6 +105,26 @@ const VendorItem: React.FC<VendorItemProps> = function ({
                             </p>
                         ) : null}
                     </span>
+                </div>
+
+                <div className="vendor-item--badges">
+                    {has_coupon ? (
+                        <>
+                            <div className="badge">
+                                {t("has {{coupon}} coupons", {
+                                    coupon: coupon_count,
+                                })}
+                            </div>
+                            {has_first_coupon && (
+                                <div className="badge">
+                                    {t("TEXT_HAS_FIRST_ORDER_COUPON")}
+                                </div>
+                            )}
+                        </>
+                    ) : null}
+                    {is_eco && (
+                        <div className="badge">{t("TEXT_VENDOR_IS_ECO")}</div>
+                    )}
                 </div>
             </div>
         </div>
