@@ -7,8 +7,12 @@
 
 @import "variables";
 @import "typography";
-@import "./components/loading-screen";
+
 @import "./containers/home";
+@import "./containers/not-found";
+
+@import "./components/loading-screen";
+
 @import "./kits/button";
 
 body {
