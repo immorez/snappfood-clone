@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
 import { I18nextProvider } from "react-i18next";
+import "./sass/app.scss";
 import i18n from "./utils/i18n.ts";
+
+import App from "./App.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
