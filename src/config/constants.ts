@@ -19,7 +19,7 @@ export const defaultLocale = faIR;
 
 export const baseUrl = "https://snappfood.ir/mobile";
 
-export const defaultLat = 35.754;
-export const defaultLong = 51.328;
+export const defaultLat = 35.73315;
+export const defaultLong = 51.40643;
 
-export const defaultPageSize = 10;
+export const defaultPageSize = 30;

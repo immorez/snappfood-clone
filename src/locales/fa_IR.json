@@ -6,5 +6,11 @@
     "TEXT_PAGE_TITLE": "اسنپ‌! فود - سفارش آنلاین غذا",
     "TEXT_HOME_PAGE_TITLE": "خانه",
     "TEXT_RESTAURANTS_PAGE_TITLE": "رستوران‌ها",
-    "up to {{discount}}%": "تا {{discount}}٪"
+    "up to {{discount}}%": "تا {{discount}}٪",
+    "TEXT_VENDOR_ITEM_DELIVERY": "پیک اسنپ‌فود",
+    "TEXT_VENDOR_ITEM_IN_HOUSE_DELIVERY": "پیک رستوران",
+    "TEXT_ETA_UNIT": "دقیقه",
+    "TEXT_VENDOR_ITEM_PRICE_UNIT": "تومان",
+    "TEXT_DELIVERY_FREE": "رایگان",
+    "TEXT_UP_TO": "تا"
 }

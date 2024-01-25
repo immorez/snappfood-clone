@@ -102,9 +102,13 @@
                 }
 
                 &--rating {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
                     .reviews-count {
                         display: flex;
                         flex-direction: row;
+                        margin-inline: 0.15rem;
                         span {
                             font-size: $text-small;
                             color: $seperator-color;
@@ -116,6 +120,45 @@
                             font-weight: $font-light;
                         }
                     }
+                    .rate {
+                        display: flex;
+                        flex-direction: row;
+                        background-color: $new-services-background-color;
+                        color: $text-color;
+                        justify-content: center;
+                        align-items: center;
+                        height: 1.25rem;
+                        padding: 0rem 0.25rem;
+                        border-radius: 0.25rem;
+                        p {
+                            font-size: $text-small;
+                            margin-top: 0.15rem;
+                        }
+                        .icon {
+                            font-size: $text-x-small;
+                            margin-inline: 0.1rem;
+                        }
+                    }
+                }
+            }
+        }
+        &--delivery {
+            display: flex;
+            flex-direction: row;
+            .description {
+                display: flex;
+                flex-direction: row;
+                p {
+                    font-size: $text-small;
+                    margin-inline: 0.1rem;
+                    font-weight: $font-light;
+                    color: $text-color-light;
+                }
+
+                .icon {
+                    font-size: $text-large;
+                    opacity: 0.5;
+                    transform: rotate(-15deg);
                 }
             }
         }

@@ -3,6 +3,7 @@
     margin: 0;
     direction: rtl;
     text-align: right;
+    touch-action: pan-x pan-y;
 }
 
 @import "./_variables";

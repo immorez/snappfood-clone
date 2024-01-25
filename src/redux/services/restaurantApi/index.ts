@@ -25,6 +25,13 @@ const restaurant = createApi({
                         optionalClient: "PWA",
                         client: "PWA",
                         deviceType: "PWA",
+                        updateChannels: JSON.stringify([
+                            "master",
+                            "jek",
+                            "SeventyPercent",
+                            "D5",
+                            "not-pro",
+                        ]),
                     },
                 },
             }),

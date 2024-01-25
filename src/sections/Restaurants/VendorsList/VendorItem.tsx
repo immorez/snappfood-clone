@@ -1,6 +1,8 @@
 import { IVendor } from "@/redux/services/restaurantApi/types";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { FaStar } from "react-icons/fa6";
+import { MdSportsMotorsports } from "react-icons/md";
 
 interface VendorItemProps extends IVendor {}
 
@@ -10,6 +12,10 @@ const VendorItem: React.FC<VendorItemProps> = function ({
     logo,
     discountValueForView,
     countReview,
+    rate,
+    isZFExpress,
+    max_eta,
+    deliveryFee,
 }) {
     const { t } = useTranslation();
     return (
@@ -53,7 +59,35 @@ const VendorItem: React.FC<VendorItemProps> = function ({
                             <p>{countReview.toLocaleString("fa-IR")}</p>
                             <span>)</span>
                         </span>
+                        <div className="rate">
+                            <FaStar className="icon" />
+                            <p>{rate}</p>
+                        </div>
                     </div>
+                </div>
+                <div className="vendor-item--delivery">
+                    <span className="description">
+                        {isZFExpress ? (
+                            <>
+                                <MdSportsMotorsports className="icon" />
+                                <p>{t("TEXT_VENDOR_ITEM_DELIVERY")}: </p>
+                            </>
+                        ) : (
+                            <p>{t("TEXT_VENDOR_ITEM_IN_HOUSE_DELIVERY")}:</p>
+                        )}
+                        <p>
+                            {deliveryFee > 0
+                                ? `${deliveryFee.toLocaleString("fa-IR")} ${t("TEXT_VENDOR_ITEM_PRICE_UNIT")}`
+                                : t("TEXT_DELIVERY_FREE")}
+                        </p>
+
+                        {max_eta !== -1 ? (
+                            <p>
+                                | {t("TEXT_UP_TO")} {max_eta}{" "}
+                                {t("TEXT_ETA_UNIT")}
+                            </p>
+                        ) : null}
+                    </span>
                 </div>
             </div>
         </div>
