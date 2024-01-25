@@ -183,7 +183,7 @@ export type TGetVendorsListResponse = {
     data: {
         count: number;
         open_count: number;
-        finalResults: { type: DataEnumType; data: IVendor | string }[];
+        finalResult: { type: DataEnumType; data: IVendor | string }[];
     };
 };
 

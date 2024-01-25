@@ -1,6 +1,8 @@
 import { defaultLat, defaultLong, defaultPageSize } from "@/config/constants";
 import { useGetVendorsListQuery } from "@/hooks/services/restaurantApiHooks";
-import { DataEnumType } from "@/redux/services/restaurantApi/types";
+import { DataEnumType, IVendor } from "@/redux/services/restaurantApi/types";
+import TextDataItem from "@/sections/Restaurants/TextDataItem";
+import VendorItem from "@/sections/Restaurants/VendorsList/VendorItem";
 import pageTitle from "@/utils/pageTitle";
 import React, { useMemo } from "react";
 import { Helmet } from "react-helmet";
@@ -16,19 +18,19 @@ const Restaurants = function () {
         page: 0,
     });
 
-    const renderSections = useMemo(() => {
+    const sections = useMemo(() => {
         if (vendorsList) {
-            let sections = [];
-            vendorsList.data.finalResults.forEach((item) => {
+            return vendorsList.data.finalResult.map((item) => {
                 switch (item.type) {
                     case DataEnumType.TEXT:
-                        sections.push(item.data);
-                        break;
+                        return <TextDataItem data={item.data as string} />;
+
                     case DataEnumType.VENDOR:
-                        sections.push(item.data);
+                        return <VendorItem {...(item.data as IVendor)} />;
                 }
             });
         }
+        return null;
     }, []);
 
     return (
@@ -36,7 +38,9 @@ const Restaurants = function () {
             <Helmet>
                 <title>{pageTitle(t("TEXT_RESTAURANTS_PAGE_TITLE"))}</title>
             </Helmet>
-            <div className="restaurants"></div>
+            <div className="restaurants">
+                {React.Children.toArray(sections)}
+            </div>
         </>
     );
 };

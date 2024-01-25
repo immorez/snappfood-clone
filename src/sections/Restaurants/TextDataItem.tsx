@@ -1,7 +1,11 @@
 import React from "react";
 
-const TextDataItem = function () {
-    return <div>text data item</div>;
+interface TextDataItemProps {
+    data: string;
+}
+
+const TextDataItem: React.FC<TextDataItemProps> = function ({ data }) {
+    return <div>{data}</div>;
 };
 
 export default React.memo(TextDataItem);

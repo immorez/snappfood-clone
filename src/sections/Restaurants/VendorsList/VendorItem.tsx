@@ -1,7 +1,10 @@
+import { IVendor } from "@/redux/services/restaurantApi/types";
 import React from "react";
 
-const VendorItem = function () {
-    return <div>vendor item</div>;
+interface VendorItemProps extends IVendor {}
+
+const VendorItem: React.FC<VendorItemProps> = function ({ title }) {
+    return <div>{title}</div>;
 };
 
 export default React.memo(VendorItem);
