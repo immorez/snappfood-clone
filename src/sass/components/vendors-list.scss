@@ -3,6 +3,7 @@
     flex-direction: column;
     list-style: none;
 
+    height: 100vh;
     .vendor-item {
         padding: 1rem;
 
@@ -174,6 +175,29 @@
                 border-radius: 0.25rem;
                 margin-inline: 0.15rem;
             }
+        }
+    }
+
+    .skeleton {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+        &--cover {
+            height: $vendor-item-cover-size;
+            width: 100%;
+            border-radius: 1rem;
+            margin: 0.5rem 0rem;
+        }
+        &--title {
+            height: 30px;
+            width: 60%;
+            border-radius: 0.5rem;
+        }
+        &--description {
+            height: 20px;
+            width: 80%;
+            border-radius: 0.5rem;
+            margin: 0.5rem 0rem;
         }
     }
 

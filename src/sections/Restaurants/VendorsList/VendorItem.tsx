@@ -24,7 +24,7 @@ const VendorItem: React.FC<VendorItemProps> = function ({
 }) {
     const { t } = useTranslation();
     return (
-        <div className="vendor-item">
+        <li className="vendor-item">
             <header className="vendor-item--cover">
                 <div className="vendor-item--cover-image">
                     <img
@@ -127,7 +127,7 @@ const VendorItem: React.FC<VendorItemProps> = function ({
                     )}
                 </div>
             </div>
-        </div>
+        </li>
     );
 };
 
