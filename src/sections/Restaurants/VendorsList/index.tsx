@@ -100,7 +100,9 @@ const VendorsList = function () {
         <ul className="vendors-list">
             {React.Children.toArray(sections)}
             {isFetching &&
-                [...Array(3)].map((_, i) => <VendorItemSkeleton key={i} />)}
+                [...Array(isLoading ? 4 : 1)].map((_, i) => (
+                    <VendorItemSkeleton key={i} />
+                ))}
         </ul>
     );
 };

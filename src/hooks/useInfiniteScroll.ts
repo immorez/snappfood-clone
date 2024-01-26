@@ -1,13 +1,5 @@
-import { useEffect, useState } from "react";
-
-/**
- * Custom hook for handling infinite scroll behavior.
- *
- * @param {boolean} isLoading - Indicates whether data is currently being loaded.
- * @param {boolean} hasMoreData - Indicates whether there is more data to be loaded.
- * @param {string} className - The CSS class name of the container element.
- * @returns {object} - An object containing the current page value.
- */
+import { debounce } from "lodash";
+import { useEffect, useCallback } from "react";
 
 const useInfiniteScroll = (
     isLoading: boolean,
@@ -15,30 +7,37 @@ const useInfiniteScroll = (
     className: string,
     onPageChange: () => void,
 ) => {
-    useEffect(() => {
-        const onScroll = () => {
-            if (hasMoreData) {
-                const lastElement = document.querySelector(
-                    `.${className} > :last-child`,
-                );
+    const handleScroll = useCallback(() => {
+        if (hasMoreData) {
+            const lastElement = document.querySelector(
+                `.${className} > :last-child`,
+            ) as HTMLElement | null;
 
-                if (lastElement) {
-                    const rect = lastElement.getBoundingClientRect();
-                    const scrolledToBottom = rect.bottom <= window.innerHeight;
+            if (lastElement) {
+                const rect = lastElement.getBoundingClientRect();
+                const scrolledToBottom =
+                    rect.bottom <= window.innerHeight + 200;
 
-                    if (scrolledToBottom && !isLoading && hasMoreData) {
-                        onPageChange();
-                    }
+                if (scrolledToBottom && !isLoading) {
+                    onPageChange();
                 }
             }
-        };
+        }
+    }, [isLoading, hasMoreData, onPageChange, className]);
 
-        document.addEventListener("scroll", onScroll);
+    const debouncedScroll = useCallback(debounce(handleScroll, 200), [
+        handleScroll,
+    ]);
+
+    useEffect(() => {
+        document.addEventListener("scroll", debouncedScroll);
 
         return () => {
-            document.removeEventListener("scroll", onScroll);
+            document.removeEventListener("scroll", debouncedScroll);
         };
-    }, [isLoading, hasMoreData, onPageChange]);
+    }, [debouncedScroll]);
+
+    return {};
 };
 
 export default useInfiniteScroll;
