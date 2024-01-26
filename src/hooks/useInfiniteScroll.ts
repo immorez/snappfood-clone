@@ -13,9 +13,8 @@ const useInfiniteScroll = (
     isLoading: boolean,
     hasMoreData: boolean,
     className: string,
+    onPageChange: () => void,
 ) => {
-    const [page, setPage] = useState(0);
-
     useEffect(() => {
         const onScroll = () => {
             if (hasMoreData) {
@@ -28,7 +27,7 @@ const useInfiniteScroll = (
                     const scrolledToBottom = rect.bottom <= window.innerHeight;
 
                     if (scrolledToBottom && !isLoading && hasMoreData) {
-                        setPage((prevPage) => prevPage + 1);
+                        onPageChange();
                     }
                 }
             }
@@ -39,9 +38,7 @@ const useInfiniteScroll = (
         return () => {
             document.removeEventListener("scroll", onScroll);
         };
-    }, [isLoading, hasMoreData]);
-
-    return { page };
+    }, [isLoading, hasMoreData, onPageChange]);
 };
 
 export default useInfiniteScroll;

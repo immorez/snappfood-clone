@@ -5,7 +5,7 @@ import {
     IFinalResult,
     IVendor,
 } from "@/redux/services/restaurantApi/types";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import TextDataItem from "./TextDataItem";
 import VendorItem from "./VendorItem";
 import VendorItemSkeleton from "./VendorItemSkeleton";
@@ -15,7 +15,9 @@ import useInfiniteScroll from "@/hooks/useInfiniteScroll";
 const VendorsList = function () {
     const { t } = useTranslation();
 
-    const [mergedData, setMergedData] = useState<IFinalResult[]>([]);
+    const [mergedData, setMergedData] = useState<IFinalResult[]>();
+
+    const [page, setPage] = useState(0);
 
     const [hasMoreData, setHasMoreData] = useState(true);
 
@@ -41,10 +43,7 @@ const VendorsList = function () {
                 }
             });
         }
-        return null;
     }, [mergedData]);
-
-    const [pageData, setPageData] = useState(0);
 
     const {
         data: vendorsList,
@@ -54,17 +53,27 @@ const VendorsList = function () {
         lat: +defaultLat,
         long: +defaultLong,
         page_size: +defaultPageSize,
-        page: pageData,
+        page,
     });
 
-    const { page } = useInfiniteScroll(isFetching, hasMoreData, "vendors-list");
+    const onPageChangeHandler = useCallback(
+        () => setPage((prevPage) => prevPage + 1),
+        [],
+    );
+
+    useInfiniteScroll(
+        isFetching,
+        hasMoreData,
+        "vendors-list",
+        onPageChangeHandler,
+    );
 
     useEffect(() => {
         if (vendorsList && vendorsList.data.finalResult.length > 0) {
             setMergedData(
                 (prev) =>
                     [
-                        ...prev,
+                        ...(prev ?? []),
                         ...vendorsList.data.finalResult,
                     ] as IFinalResult[],
             );
@@ -73,17 +82,13 @@ const VendorsList = function () {
 
     useEffect(() => {
         if (vendorsList) {
-            if (vendorsList.data.count <= pageData * +defaultPageSize) {
+            if (vendorsList.data.count <= page * +defaultPageSize) {
                 setHasMoreData(false);
             }
         }
-    }, [vendorsList, pageData]);
+    }, [vendorsList, page]);
 
-    useEffect(() => {
-        setPageData(page);
-    }, [page]);
-
-    if (sections && !isLoading && sections.length === 0) {
+    if (!isLoading && mergedData?.length === 0) {
         return (
             <div className="no-results">
                 <p>{t("TEXT_NO_RESULTS")}</p>
