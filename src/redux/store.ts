@@ -9,6 +9,7 @@ import {
 import restaurantApi from "./services/restaurantApi";
 
 import { rootReducer } from "./rootReducer";
+import rtkQueryErrorLogger from "./middlewares/errorLogger";
 
 export type RootState = ReturnType<typeof rootReducer>;
 
@@ -21,7 +22,7 @@ export const setupStore = (
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 serializableCheck: false,
-            }).concat([restaurantApi.middleware]),
+            }).concat([restaurantApi.middleware, rtkQueryErrorLogger]),
     });
 };
 
