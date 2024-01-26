@@ -1,13 +1,26 @@
 import { useEffect, useState } from "react";
 
-const useInfiniteScroll = (isLoading: boolean, hasMoreData: boolean) => {
+/**
+ * Custom hook for handling infinite scroll behavior.
+ *
+ * @param {boolean} isLoading - Indicates whether data is currently being loaded.
+ * @param {boolean} hasMoreData - Indicates whether there is more data to be loaded.
+ * @param {string} className - The CSS class name of the container element.
+ * @returns {object} - An object containing the current page value.
+ */
+
+const useInfiniteScroll = (
+    isLoading: boolean,
+    hasMoreData: boolean,
+    className: string,
+) => {
     const [page, setPage] = useState(0);
 
     useEffect(() => {
         const onScroll = () => {
             if (hasMoreData) {
                 const lastElement = document.querySelector(
-                    ".vendors-list > :last-child",
+                    `.${className} > :last-child`,
                 );
 
                 if (lastElement) {

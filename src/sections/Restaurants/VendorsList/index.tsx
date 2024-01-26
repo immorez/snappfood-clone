@@ -57,11 +57,7 @@ const VendorsList = function () {
         page: pageData,
     });
 
-    const { page } = useInfiniteScroll(isFetching, hasMoreData);
-
-    useEffect(() => {
-        setPageData(page);
-    }, [page]);
+    const { page } = useInfiniteScroll(isFetching, hasMoreData, "vendors-list");
 
     useEffect(() => {
         if (vendorsList && vendorsList.data.finalResult.length > 0) {
@@ -82,6 +78,10 @@ const VendorsList = function () {
             }
         }
     }, [vendorsList, pageData]);
+
+    useEffect(() => {
+        setPageData(page);
+    }, [page]);
 
     if (sections && !isLoading && sections.length === 0) {
         return (
