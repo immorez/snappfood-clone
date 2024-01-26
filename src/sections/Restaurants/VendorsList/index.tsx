@@ -1,4 +1,4 @@
-import { defaultLat, defaultLong, defaultPageSize } from "@/config/constants";
+import { defaultLat, defaultLong, defaultPageSize } from "@/config";
 import { useGetVendorsListQuery } from "@/hooks/services/restaurantApiHooks";
 import {
     DataEnumType,
@@ -51,9 +51,9 @@ const VendorsList = function () {
         isFetching,
         isLoading,
     } = useGetVendorsListQuery({
-        lat: defaultLat,
-        long: defaultLong,
-        page_size: defaultPageSize,
+        lat: +defaultLat,
+        long: +defaultLong,
+        page_size: +defaultPageSize,
         page: pageData,
     });
 
@@ -73,7 +73,7 @@ const VendorsList = function () {
 
     useEffect(() => {
         if (vendorsList) {
-            if (vendorsList.data.count <= pageData * defaultPageSize) {
+            if (vendorsList.data.count <= pageData * +defaultPageSize) {
                 setHasMoreData(false);
             }
         }

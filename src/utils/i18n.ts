@@ -1,7 +1,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { enUSLocale, faIRLocale } from "@/locales";
-import { defaultLocale, enUS, faIR } from "@/config/constants";
+import { defaultLocale } from "@/config";
+import { enUS, faIR } from "@/config/constants";
 
 const resources = {
     [enUS]: {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { omit } from "lodash";
-import { baseUrl, requestTimeout } from "@/config/constants";
+import { baseUrl, requestTimeout } from "@/config";
 
 import { IAxiosInvokeOpts } from "./types";
 
@@ -24,7 +24,7 @@ export const axiosInvoke = async (axiosInvokeOpts: IAxiosInvokeOpts) => {
                   cancelToken: new axios.CancelToken((cancel) => {
                       setTimeout(() => {
                           cancel();
-                      }, requestTimeout);
+                      }, Number(requestTimeout));
                   }),
               }),
         ...omit(options, ["headers"]),

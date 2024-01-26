@@ -16,7 +16,8 @@ Developer experience first:
 -   🛠 Code Formatter with [Prettier](https://prettier.io)
 -   🛤️ [React Router](https://reactrouter.com) is integrated for handling navigation and routing in the application.
 -   🚀 [RTK Query](https://redux-toolkit.js.org/rtk-query) is utilized for efficient and simplified data fetching, seamlessly integrated with Redux.
-    Built-in feature from Next.js:
+
+You can also tune the application using .env file.
 
 -   ☕ Minify HTML & CSS
 -   💨 Live reload

@@ -1,3 +1,25 @@
 {
-    "ــTEST_TEXTــ": "TEST_TEXT"
+    "ــTEST_TEXTــ": "TEST_TEXT",
+    "BUTTON_TEXT_RESTAURANT_HOME_PAGE": "Go to Restaurants Page",
+    "TEXT_HOME_PAGE_SUBTITLE": "Welcome!",
+    "TEXT_PAGE_NOT_FOUND": "Page Not Found!",
+    "BUTTON_TEXT_BACK_TO_HOME": "Back to Home",
+    "TEXT_PAGE_TITLE": "Snapp! Food - Order Food Online",
+    "TEXT_HOME_PAGE_TITLE": "Home",
+    "TEXT_RESTAURANTS_PAGE_TITLE": "Restaurants",
+    "up to {{discount}}%": "up to {{discount}}%",
+    "TEXT_VENDOR_ITEM_DELIVERY": "Snapp Food Delivery",
+    "TEXT_VENDOR_ITEM_IN_HOUSE_DELIVERY": "Restaurant Delivery",
+    "TEXT_ETA_UNIT": "minutes",
+    "TEXT_VENDOR_ITEM_PRICE_UNIT": "Toman",
+    "TEXT_DELIVERY_FREE": "Free",
+    "TEXT_UP_TO": "Up to",
+    "has {{coupon}} coupons": "has {{coupon}} coupons",
+    "TEXT_HAS_FIRST_ORDER_COUPON": "First Order Discount",
+    "TEXT_VENDOR_IS_ECO": "Affordable",
+    "TEXT_BADGE_NEW": "New",
+    "File size is too large to upload.": "File size is too large to upload.",
+    "Too many requests.": "Too many requests.",
+    "Check your internet connection and try again.": "Check your internet connection and try again.",
+    "TEXT_NO_RESULTS": "No results found."
 }
