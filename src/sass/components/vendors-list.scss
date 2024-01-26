@@ -163,6 +163,32 @@
             }
         }
 
+        &--cuisines {
+            display: flex;
+            flex-direction: row;
+            padding: 0.2rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            p {
+                font-size: $text-x-small;
+                width: auto;
+                border-radius: 0.25rem;
+                white-space: nowrap;
+
+                &::after {
+                    content: ".";
+                    font-weight: 900;
+                    margin-inline: 0.4rem;
+                    color: $text-color-light;
+                    opacity: 0.7;
+                }
+
+                &:last-child::after {
+                    content: none;
+                }
+            }
+        }
+
         &--badges {
             display: flex;
             flex-direction: row;

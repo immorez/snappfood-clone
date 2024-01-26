@@ -175,6 +175,7 @@ export interface IVendor {
     new_type: NewEnumType;
     new_type_title: string;
     is_eco: boolean;
+    cuisinesArray: { id: number; title: string }[];
 }
 
 export interface IFinalResult {

@@ -21,6 +21,7 @@ const VendorItem: React.FC<VendorItemProps> = function ({
     has_first_coupon,
     backgroundImage,
     is_eco,
+    cuisinesArray,
 }) {
     const { t } = useTranslation();
     return (
@@ -105,6 +106,11 @@ const VendorItem: React.FC<VendorItemProps> = function ({
                             </p>
                         ) : null}
                     </span>
+                </div>
+                <div className="vendor-item--cuisines">
+                    {cuisinesArray.slice(0, 5).map((cuisine) => (
+                        <p key={cuisine.id}>{cuisine.title}</p>
+                    ))}
                 </div>
                 <div className="vendor-item--badges">
                     {has_coupon ? (
