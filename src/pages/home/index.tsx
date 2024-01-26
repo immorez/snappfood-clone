@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const Home = function () {
     const { t } = useTranslation();
+
     return (
         <>
             <Helmet>
@@ -14,15 +15,22 @@ const Home = function () {
             </Helmet>
             <div className="home">
                 <div className="home--logo">
-                    <img alt="snapp-food-logo" src="/icon_256x256.png" />
+                    <img
+                        alt="snapp-food-logo"
+                        src="/icon_256x256.png"
+                        role="img"
+                        aria-label={t("Logo")}
+                    />
                 </div>
-                <h3 className="home--subtitle">
+                <h3 className="home--subtitle" aria-level={2} role="heading">
                     {t("TEXT_HOME_PAGE_SUBTITLE")}
                 </h3>
                 <Link
                     data-testid="goToRestaurants"
                     to={PATH_MAIN.restaurant}
                     className="button button--primary button--large"
+                    role="button"
+                    aria-label={t("BUTTON_TEXT_RESTAURANT_HOME_PAGE")}
                 >
                     {t("BUTTON_TEXT_RESTAURANT_HOME_PAGE")}
                 </Link>

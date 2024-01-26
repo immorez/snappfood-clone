@@ -5,7 +5,11 @@ interface TextDataItemProps {
 }
 
 const TextDataItem: React.FC<TextDataItemProps> = function ({ text }) {
-    return <li className="text-item">{text}</li>;
+    return (
+        <li className="text-item" aria-label={text} role="heading">
+            {text}
+        </li>
+    );
 };
 
 export default React.memo(TextDataItem);

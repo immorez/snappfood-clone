@@ -49,7 +49,9 @@ const VendorItem: React.FC<VendorItemProps> = function ({
             <div className="vendor-item--details">
                 <div className="vendor-item--details-row">
                     <div className="vendor-item--details-row--title">
-                        <h3>{title}</h3>
+                        <h3 role="heading" aria-level={2}>
+                            {title}
+                        </h3>
                         {discountValueForView ? (
                             <span className="vendor-item--details-row--discount-badge">
                                 <p>
