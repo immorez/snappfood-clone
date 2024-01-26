@@ -106,10 +106,10 @@ const VendorItem: React.FC<VendorItemProps> = function ({
                         ) : null}
                     </span>
                 </div>
-
                 <div className="vendor-item--badges">
                     {has_coupon ? (
                         <>
+                            {/* TODO: it's better to have these badges componentized */}
                             <div className="badge">
                                 {t("has {{coupon}} coupons", {
                                     coupon: coupon_count,

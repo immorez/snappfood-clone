@@ -9,9 +9,9 @@
 @import "./_variables";
 @import "./_typography";
 
-@import "./containers/home";
-@import "./containers/restaurants";
-@import "./containers/not-found";
+@import "./pages/home";
+@import "./pages/restaurants";
+@import "./pages/not-found";
 
 @import "./components/loading-screen";
 @import "./components/vendors-list";
