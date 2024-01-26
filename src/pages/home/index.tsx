@@ -20,6 +20,7 @@ const Home = function () {
                     {t("TEXT_HOME_PAGE_SUBTITLE")}
                 </h3>
                 <Link
+                    data-testid="goToRestaurants"
                     to={PATH_MAIN.restaurant}
                     className="button button--primary button--large"
                 >

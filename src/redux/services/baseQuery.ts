@@ -86,7 +86,7 @@ const baseQuery =
                 isCancel = true;
             } else {
                 message =
-                    import.meta.env.NODE_ENV === "development" ? e.message : "";
+                    process.env.NODE_ENV === "development" ? e.message : "";
             }
 
             const error = {

@@ -1,16 +1,16 @@
 {
     "compilerOptions": {
-        "target": "ES2020",
+        "target": "es2020",
         "useDefineForClassFields": true,
         "lib": ["ES2020", "DOM", "DOM.Iterable"],
-        "module": "ESNext",
+        "module": "esnext",
         "skipLibCheck": true,
 
-        /* Bundler mode */
-        "moduleResolution": "bundler",
+        "moduleResolution": "Node",
         "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
+        "esModuleInterop": true,
         "noEmit": true,
         "jsx": "react-jsx",
 
@@ -23,8 +23,10 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],
+            "@/locales/*": ["./src/locales/*"],
+            "@/utils/*": ["./src/utils/*"],
         },
     },
-    "include": ["src"],
+    "include": ["src", "src/setupTests.tsx"],
     "references": [{ "path": "./tsconfig.node.json" }],
 }
