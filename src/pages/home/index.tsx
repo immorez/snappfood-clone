@@ -1,5 +1,6 @@
 import { PATH_MAIN } from "@/routes/paths";
 import pageTitle from "@/utils/pageTitle";
+import packageJson from "../../../package.json";
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
@@ -34,6 +35,9 @@ const Home = function () {
                 >
                     {t("BUTTON_TEXT_RESTAURANT_HOME_PAGE")}
                 </Link>
+                <p className="home--version">
+                    {t("TEXT_VERSION")} {packageJson.version}
+                </p>
             </div>
         </>
     );
