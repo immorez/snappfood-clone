@@ -9,6 +9,7 @@
 Developer experience first:
 
 -   🔥 [Vite](https://vitejs.dev) as build tool
+-   🔋 Battery-packed with Vite PWA plugin
 -   🎨 Integrated with Sass
 -   🌐 Internationalization (i18n) for better-looking texts while coding
 -   🎉 Type checking [TypeScript](https://www.typescriptlang.org)
