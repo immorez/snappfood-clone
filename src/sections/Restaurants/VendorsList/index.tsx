@@ -10,24 +10,14 @@ import TextDataItem from "./TextDataItem";
 import VendorItem from "./VendorItem";
 import VendorItemSkeleton from "./VendorItemSkeleton";
 import { useTranslation } from "react-i18next";
+import useInfiniteScroll from "@/hooks/useInfiniteScroll";
 
 const VendorsList = function () {
     const { t } = useTranslation();
-    const [page, setPage] = useState(0);
+
     const [mergedData, setMergedData] = useState<IFinalResult[]>([]);
 
     const [hasMoreData, setHasMoreData] = useState(true);
-
-    const {
-        data: vendorsList,
-        isFetching,
-        isLoading,
-    } = useGetVendorsListQuery({
-        lat: defaultLat,
-        long: defaultLong,
-        page_size: defaultPageSize,
-        page,
-    });
 
     const sections = useMemo(() => {
         if (mergedData) {
@@ -54,30 +44,24 @@ const VendorsList = function () {
         return null;
     }, [mergedData]);
 
+    const [pageData, setPageData] = useState(0);
+
+    const {
+        data: vendorsList,
+        isFetching,
+        isLoading,
+    } = useGetVendorsListQuery({
+        lat: defaultLat,
+        long: defaultLong,
+        page_size: defaultPageSize,
+        page: pageData,
+    });
+
+    const { page } = useInfiniteScroll(isFetching, hasMoreData);
+
     useEffect(() => {
-        const onScroll = () => {
-            if (hasMoreData) {
-                const lastElement = document.querySelector(
-                    ".vendors-list > :last-child",
-                );
-
-                if (lastElement) {
-                    const rect = lastElement.getBoundingClientRect();
-                    const scrolledToBottom = rect.bottom <= window.innerHeight;
-
-                    if (scrolledToBottom && !isFetching && hasMoreData) {
-                        setPage((prevPage) => prevPage + 1);
-                    }
-                }
-            }
-        };
-
-        document.addEventListener("scroll", onScroll);
-
-        return function () {
-            document.removeEventListener("scroll", onScroll);
-        };
-    }, [page, isFetching, hasMoreData]);
+        setPageData(page);
+    }, [page]);
 
     useEffect(() => {
         if (vendorsList && vendorsList.data.finalResult.length > 0) {
@@ -93,11 +77,11 @@ const VendorsList = function () {
 
     useEffect(() => {
         if (vendorsList) {
-            if (vendorsList.data.count <= page * defaultPageSize) {
+            if (vendorsList.data.count <= pageData * defaultPageSize) {
                 setHasMoreData(false);
             }
         }
-    }, [vendorsList, page]);
+    }, [vendorsList, pageData]);
 
     if (sections && !isLoading && sections.length === 0) {
         return (
